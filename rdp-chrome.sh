@@ -1,5 +1,5 @@
 apt update > /dev/null 2>&1
-
+echo $Pin
 wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
 dpkg --install chrome-remote-desktop_current_amd64.deb
 apt install --assume-yes --fix-broken
