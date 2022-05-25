@@ -1,15 +1,16 @@
 apt update > /dev/null 2>&1
-#apt install sudo -y
-#sudo adduser user --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password
-#rm -rf * > /dev/null 2>&1
-#echo "Unduh ngrok"
+sudo useradd -m user
+sudo adduser user sudo
+echo 'user:root' | sudo chpasswd
+sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
 wget -O ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip > /dev/null 2>&1
 unzip ngrok.zip > /dev/null 2>&1
 read -p "Paste Ngrok Authtoken: " CRP
 ./ngrok authtoken $CRP
 nohup ./ngrok tcp 3389 &>/dev/null &
 #sudo apt update
-clear
+printf "Installing RDP Be Patience... " >&2
+{
 echo "===================================="
 echo "Install XFCE"
 echo "===================================="
@@ -28,4 +29,4 @@ echo "=================70%"
 echo xfce4-session >~/.xsession
 echo "=====================90%"
 sudo service xrdp start
-clear
+} &> /dev/null &&
