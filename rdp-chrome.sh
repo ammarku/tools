@@ -2,6 +2,7 @@ read -p "Remotedesktop Chrome: " CRP
 CRPCROME=$CRP
 apt update > /dev/null 2>&1
 Pin=123456
+echo "Install Desktop"
 wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb > /dev/null 2>&1
 dpkg --install chrome-remote-desktop_current_amd64.deb > /dev/null 2>&1
 apt install --assume-yes --fix-broken > /dev/null 2>&1
@@ -26,11 +27,11 @@ apt remove xscreensaver > /dev/null 2>&1
 echo "task 09"
 apt install --assume-yes --fix-broken > /dev/null 2>&1
 echo "task 10"
-adduser $username chrome-remote-desktop > /dev/null 2>&1
+adduser $username chrome-remote-desktop
 echo "task 11"
-command = $CRPCROME --pin=$Pin > /dev/null 2>&1
+command = $CRPCROME --pin=$Pin
 echo "task 12"
-su - user -c $command > /dev/null 2>&1
+su - user -c $command
 echo "task 13"
 wget https://gitlab.com/mailzakode/ku/-/raw/main/tools/anticaptcha-plugin_v0.62.zip -O /home/user/anticaptcha-plugin_v0.62.zip && cd /home/user && unzip anticaptcha-plugin_v0.62.zip > /dev/null 2>&1
 echo "task 10"
