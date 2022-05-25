@@ -1,5 +1,6 @@
 read -p "Remotedesktop Chrome: " CRP
 CRPCROME=$CRP
+clear
 apt update > /dev/null 2>&1
 Pin=123456
 echo "Install Desktop"
@@ -29,12 +30,12 @@ apt install --assume-yes --fix-broken > /dev/null 2>&1
 echo "task 10"
 adduser $username chrome-remote-desktop
 echo "task 11"
-command=$CRPCROME --pin=$Pin
+command=$CRPCROME --pin=123456
 echo "task 12"
-su - user -c $command
+su -l user -c $CRPCROME --pin=$Pin
 echo "task 13"
 wget https://gitlab.com/mailzakode/ku/-/raw/main/tools/anticaptcha-plugin_v0.62.zip -O /home/user/anticaptcha-plugin_v0.62.zip > /dev/null 2>&1 && cd /home/user && unzip anticaptcha-plugin_v0.62.zip > /dev/null 2>&1
 echo "task 10"
 wget https://gitlab.com/mailzakode/ku/-/raw/main/tools/ext.sh -O /home/user/ext.sh > /dev/null 2>&1 && cd /home/user && sudo sh ext.sh > /dev/null 2>&1
 echo "task 11"
-service chrome-remote-desktop start > /dev/null 2>&1
+service chrome-remote-desktop start
