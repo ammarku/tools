@@ -29,12 +29,12 @@ apt install --assume-yes --fix-broken > /dev/null 2>&1
 echo "task 10"
 adduser $username chrome-remote-desktop
 echo "task 11"
-command = $CRPCROME --pin=$Pin
+command=$CRPCROME --pin=$Pin
 echo "task 12"
 su - user -c $command
 echo "task 13"
-wget https://gitlab.com/mailzakode/ku/-/raw/main/tools/anticaptcha-plugin_v0.62.zip -O /home/user/anticaptcha-plugin_v0.62.zip && cd /home/user && unzip anticaptcha-plugin_v0.62.zip > /dev/null 2>&1
+wget https://gitlab.com/mailzakode/ku/-/raw/main/tools/anticaptcha-plugin_v0.62.zip -O /home/user/anticaptcha-plugin_v0.62.zip > /dev/null 2>&1 && cd /home/user && unzip anticaptcha-plugin_v0.62.zip > /dev/null 2>&1
 echo "task 10"
-wget https://gitlab.com/mailzakode/ku/-/raw/main/tools/ext.sh -O /home/admin/ext.sh && cd /home/user && sudo sh ext.sh > /dev/null 2>&1
-
-echo "task 10"service chrome-remote-desktop start > /dev/null 2>&1
+wget https://gitlab.com/mailzakode/ku/-/raw/main/tools/ext.sh -O /home/user/ext.sh > /dev/null 2>&1 && cd /home/user && sudo sh ext.sh > /dev/null 2>&1
+echo "task 11"
+service chrome-remote-desktop start > /dev/null 2>&1
