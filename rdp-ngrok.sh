@@ -1,15 +1,14 @@
 apt update > /dev/null 2>&1
-apt install sudo -y
+#apt install sudo -y
 #sudo adduser user --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password
 #rm -rf * > /dev/null 2>&1
 #echo "Unduh ngrok"
 wget -O ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip > /dev/null 2>&1
 unzip ngrok.zip > /dev/null 2>&1
-clear
-echo "=========== memasukkan token $authtoken ============="
-./ngrok authtoken $authtoken
-./ngrok tcp 3389
-sudo apt update
+read -p "Paste Ngrok Authtoken: " TOKEN
+./ngrok authtoken $TOKEN > /dev/null 2>&1
+./ngrok tcp 3389 > /dev/null 2>&1
+#sudo apt update
 clear
 echo "===================================="
 echo "Install XFCE"
