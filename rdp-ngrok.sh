@@ -1,3 +1,4 @@
+#! /bin/bash
 apt update > /dev/null 2>&1
 sudo useradd -m user
 sudo adduser user sudo
