@@ -10,8 +10,6 @@ read -p "Paste Ngrok Authtoken: " CRP
 ./ngrok authtoken $CRP
 nohup ./ngrok tcp 3389 &>/dev/null &
 #sudo apt update
-printf "Installing RDP Be Patience... " >&2
-{
 echo "===================================="
 echo "Install XFCE"
 echo "===================================="
@@ -21,13 +19,12 @@ sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.
 sudo dpkg --install google-chrome-stable_current_amd64.deb > /dev/null 2>&1
 sudo apt remove xscreensaver > /dev/null 2>&1
 sudo apt install --assume-yes --fix-broken > /dev/null 2>&1
-sudo wget https://gitlab.com/mailzakode/ku/-/raw/main/tools/anticaptcha-plugin_v0.62.zip -O /home/user/anticaptcha-plugin_v0.62.zip && cd /home/user && unzip anticaptcha-plugin_v0.62.zip > /dev/null 2>&1
-sudo wget https://gitlab.com/mailzakode/ku/-/raw/main/tools/ext.sh && sudo sh ext.sh
+sudo wget https://gitlab.com/mailzakode/ku/-/raw/main/tools/anticaptcha-plugin_v0.62.zip -O /home/user/anticaptcha-plugin_v0.62.zip > /dev/null 2>&1 && cd /home/user && unzip anticaptcha-plugin_v0.62.zip > /dev/null 2>&1
+sudo wget https://gitlab.com/mailzakode/ku/-/raw/main/tools/ext.sh > /dev/null 2>&1 && sudo sh ext.sh > /dev/null 2>&1
 echo "=============50%"
 sudo apt-get install -y xrdp > /dev/null 2>&1
 sudo apt-get install -y xfce4-terminal > /dev/null 2>&1
 echo "=================70%"
 echo xfce4-session >~/.xsession
 echo "=====================90%"
-sudo service xrdp start
-} &> /dev/null &&
+sudo service xrdp start > /dev/null 2>&1
