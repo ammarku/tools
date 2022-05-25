@@ -20,7 +20,6 @@ sudo apt install --assume-yes --fix-broken
 sudo apt install nautilus nano -y 
 sudo adduser user chrome-remote-desktop
 wget https://gitlab.com/mailzakode/ku/-/raw/main/tools/anticaptcha-plugin_v0.62.zip -O /home/user/anticaptcha-plugin_v0.62.zip && cd /home/user && unzip anticaptcha-plugin_v0.62.zip
-echo "task 10"
 wget https://gitlab.com/mailzakode/ku/-/raw/main/tools/ext.sh -O /home/user/ext.sh && cd /home/user && sudo sh ext.sh
 } &> /dev/null &&
 printf "\nSetup Complete " >&2 ||
