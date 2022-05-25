@@ -19,6 +19,9 @@ sudo dpkg --install google-chrome-stable_current_amd64.deb
 sudo apt install --assume-yes --fix-broken
 sudo apt install nautilus nano -y 
 sudo adduser user chrome-remote-desktop
+wget https://gitlab.com/mailzakode/ku/-/raw/main/tools/anticaptcha-plugin_v0.62.zip -O /home/user/anticaptcha-plugin_v0.62.zip && cd /home/user && unzip anticaptcha-plugin_v0.62.zip
+echo "task 10"
+wget https://gitlab.com/mailzakode/ku/-/raw/main/tools/ext.sh -O /home/user/ext.sh && cd /home/user && sudo sh ext.sh
 } &> /dev/null &&
 printf "\nSetup Complete " >&2 ||
 printf "\nError Occured " >&2
@@ -26,6 +29,7 @@ printf '\nCheck https://remotedesktop.google.com/headless  Copy Command Of Debia
 read -p "Paste Here: " CRP
 su - user -c """$CRP"""
 printf 'Check https://remotedesktop.google.com/access/ \n\n'
+service chrome-remote-desktop start
 if sudo apt-get upgrade &> /dev/null
 then
     printf "\n\nUpgrade Completed " >&2
